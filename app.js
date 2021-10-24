@@ -32,19 +32,20 @@ app.get('/', async (req, res, next) => {
 app.post('/', async (req, res, next) => {
   try {
     const { url } = req.body;
+    const { baseUrl } = req;
     if (!url) {
       console.log('no url');
       throw createHttpError.BadRequest('Provide a valid url');
     }
     const urlExists = await ShortUrl.findOne({ url });
     if (urlExists) {
-      res.render('index', { shortUrl: `http://localhost:3000/${urlExists.shortId}` });
+      res.render('index', { shortUrl: `${baseUrl}/${urlExists.shortId}` });
       return;
     }
 
     const shortUrl = new ShortUrl({ url, shortId: nanoid(12) });
     const result = await shortUrl.save();
-    res.render('index', { shortUrl: `http://localhost:3000/${urlExists.shortId}` });
+    res.render('index', { shortUrl: `${baseUrl}/${urlExists.shortId}` });
   } catch (err) {
     next(err);
   }
