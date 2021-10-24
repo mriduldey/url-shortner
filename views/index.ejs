@@ -10,7 +10,7 @@
   <body>
     <h1>URL Shortner</h1>
     <% if (locals.error) {%>
-    <p class="error"><% error %></p>
+    <p class="error"><%= error %></p>
     <%} %>
 
     <form action="/" method="post">
@@ -19,8 +19,8 @@
     </form>
 
     <div class="short-url">
-      <% if (locals.shortURl) { %>
-      <a href="<% shortUrl %>"><% shortUrl %></a>
+      <% if (locals.shortUrl) { %>
+      <a href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a>
       <% } %>
     </div>
   </body>
