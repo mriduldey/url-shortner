@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 10% 10px;
+  height: 100vh;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(14, 89, 175);
+  font-size: 3em;
+}
+
+.error {
+  color: rgb(209, 41, 35);
+}
+
+form {
+  margin-bottom: 3em;
+}
+
+input[id='url'] {
+  border: 1px solid rgb(14, 89, 175);
+  border-radius: 2px;
+  width: 70%;
+  height: 2.5em;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  font-size: 15px;
+  color: rgb(14, 89, 175);
+  background-color: white;
+
+  transition: border 600ms, background-color 600ms;
+}
+
+input[id='url']::placeholder {
+  font-size: 15px;
+  color: rgb(14, 89, 175);
+}
+
+input[id='url']:focus {
+  outline: none;
+  border: 3px solid rgb(14, 89, 175);
+  background-color: rgb(168, 209, 255);
+}
+
+input[id='submit'] {
+  border: 2px solid rgb(14, 89, 175);
+  border-radius: 3px;
+  background-color: rgb(14, 89, 175);
+  color: white;
+  height: 2.5em;
+  font-size: 15px;
+}
+
+.short-url {
+  color: rgb(14, 89, 175);
+}
