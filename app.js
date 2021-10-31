@@ -45,7 +45,7 @@ app.post('/', async (req, res, next) => {
 
     const shortUrl = new ShortUrl({ url, shortId: nanoid(12) });
     const result = await shortUrl.save();
-    res.render('index', { shortUrl: `${baseUrl}/${urlExists.shortId}` });
+    res.render('index', { shortUrl: `${baseUrl}/${shortUrl.shortId}` });
   } catch (err) {
     next(err);
   }
